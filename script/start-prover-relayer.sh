@@ -11,9 +11,9 @@ if [ "$ENABLE_PROVER" == "true" ]; then
     WAIT_HOSTS=zkevm_chain_prover_rpcd:9000 WAIT_TIMEOUT=360 ./wait
 
     ARGS="--l1.ws ${L1_ENDPOINT_WS}
-        --l2.ws ws://l2_execution_engine:8546
+        --l2.ws ws://34.204.182.236:8548
         --l1.http ${L1_ENDPOINT_HTTP}
-        --l2.http http://l2_execution_engine:8545
+        --l2.http http://34.204.182.236:8547
         --taikoL1 ${TAIKO_L1_ADDRESS}
         --taikoL2 ${TAIKO_L2_ADDRESS}
         --taikoToken ${TAIKO_TOKEN_L1_ADDRESS}
