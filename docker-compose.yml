@@ -32,7 +32,7 @@ services:
         limits:
           memory: 32G
     depends_on:
-      apus_client
+      - apus_client
     <<: *logging
 
 volumes:
