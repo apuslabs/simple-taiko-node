@@ -6,6 +6,11 @@ x-logging: &logging
       max-file: "3"
 
 services:
+  apus_client:
+    image: irongyi/apus-contract-client
+    volumes:
+      - ./.env:/app/.env
+    command: python scripts/contract_lib.py
   zkevm_chain_prover_rpcd:
     image: gcr.io/evmchain/jolnir-proverd:latest
     restart: unless-stopped
@@ -26,6 +31,8 @@ services:
       resources:
         limits:
           memory: 32G
+    depends_on:
+      apus_client
     <<: *logging
 
 volumes:
